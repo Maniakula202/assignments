@@ -7,16 +7,15 @@ if [ $(id -u) -ne 0 ]; then
 fi
 
 if [ -d "$inputfile" ]; then
-  echo "The given input path is a directory."
-  echo "Listing files inside the directory:"
-  ls "$inputfile"
-elif [ ! -s "$filename" ]; then
-    echo "The file is Empty"
-elif [ -e "$inputfile" ]; then
-  echo "Line count: $(wc -l < $inputfile)"   # Count lines
-  echo "Word count: $(wc -w < $inputfile)"   # Count words
-  echo "Charechter count: $(wc -m < $inputfile)"   # Count characters
+    echo "The given input path is a directory."
+    echo "Listing files inside the directory:"
+    ls "$inputfile"
+elif [ ! -e "$inputfile" ]; then
+    echo "The file does not exist."
+elif [ ! -s "$inputfile" ]; then
+    echo "The file is empty."
 else
-  echo "The file does not exist."
+    echo "Line count: $(wc -l < "$inputfile")"
+    echo "Word count: $(wc -w < "$inputfile")"
+    echo "Character count: $(wc -m < "$inputfile")"
 fi
-
