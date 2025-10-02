@@ -4,6 +4,7 @@ inputfile=$1
 
 if [ $(id -u) -ne 0 ]; then
     echo "You do not have enough previlage to run this file"
+    exit 1
 fi
 
 if [ -d "$inputfile" ]; then
