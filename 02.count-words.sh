@@ -10,7 +10,7 @@ if [ -d "$inputfile" ]; then
   echo "The given input path is a directory."
   echo "Listing files inside the directory:"
   ls "$inputfile"
-elif [ ! -s "$filename" ]; then
+elif [ -s "$filename" ]; then
     echo "The file is Empty"
 elif [ -e "$inputfile" ]; then
   echo "Line count: $(wc -l < $inputfile)"   # Count lines
