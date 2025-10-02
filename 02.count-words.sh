@@ -2,7 +2,7 @@
 
 inputfile=$1
 
-if [ $(id -u) -ne 0]; then
+if [ $(id -u) -ne 0 ]; then
     echo "You do not have enough previlage to run this file"
 fi
 
