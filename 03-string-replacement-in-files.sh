@@ -4,6 +4,7 @@ source_dir=$1
 
 if [ $(id -u) -ne 0 ]; then
     echo "Error:: Please run this script with root previlege"
+    exit 1
 fi
 
 if [ ! -d $source_dir ]; then 
