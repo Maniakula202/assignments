@@ -13,7 +13,7 @@ fi
 
 FILES_TO_BE_CHANGE=$(find $source_dir -name "*.conf")
 
-whenwhile IFS= read -r filepath
+while IFS= read -r filepath
 do 
   echo "Processing: $filepath"
 done <<< $FILES_TO_BE_CHANGE
