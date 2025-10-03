@@ -23,6 +23,6 @@ FILES_TO_BE_CHANGE=$(find $source_dir -name "*.conf")
 while IFS= read -r filepath
 do 
   echo "Processing: $filepath" | tee -a $LOG_FILE
-  sed 's/FOO/BAR/g' $filepath &>>$LOG_FILE
+  sed -i 's/FOO/BAR/g' $filepath &>>$LOG_FILE
   echo "Succesfully changed the word from FOO to BAR for the file: $filepath" | tee -a $LOG_FILE
 done <<< $FILES_TO_BE_CHANGE
